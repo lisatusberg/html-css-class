@@ -1,0 +1,29 @@
+body {
+  /* background: purple; */
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  background: blue;
+  /* https://www.w3schools.com/css/css3_transitions.asp */
+  transition: all .5s ease-in-out;
+}
+
+.rounded-corners {
+  /* border-radius: 8px; */
+  /* https://www.w3schools.com/cssref/css3_pr_border-radius.asp */
+  border-radius: 15px 50px 30px 5px;
+}
+
+.shadow {
+  /* https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+  box-shadow: 10px 10px 25px 10px rgba(0,0,0, .5);
+}
+
+.big-af:hover {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}

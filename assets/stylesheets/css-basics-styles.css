@@ -1,0 +1,21 @@
+body {
+  color: yellow;
+  color: #ff0000;
+}
+
+.first-class {
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  padding-left: 30px;
+  /* padding: 10px; for all */
+  /* padding: 25px 10px; top and bottom 25 ||||| right and left 10px */
+  padding: 50px 10px 25px 30px; /* TOP RIGHT BOTTOM LEFT */
+  margin-bottom: 15px;
+  border: 3px solid white;
+  background: green;
+}
+
+#first-id {
+  background: red;
+}
