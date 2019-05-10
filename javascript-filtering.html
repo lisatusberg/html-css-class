@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Filtering</title>
+  <link rel="stylesheet" href="./assets/stylesheets/javascript-filtering.css" />
+</head>
+<body>
+<!-- HTML COMMENT -->
+<a href="https://www.w3schools.com/howto/howto_js_filter_elements.asp">How to filter items</a>
+
+<!-- Control buttons -->
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('kittens')"> Kittens</button>
+  <button class="btn" onclick="filterSelection('puppies')"> Puppies</button>
+  <button class="btn" onclick="filterSelection('other')"> Other</button>
+</div>
+
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+<div class="container">
+  <div class="filterDiv kittens">
+    <img src="./assets/images/filter/kitten-1-thumbnail.jpg" />
+  </div>
+  <div class="filterDiv puppies">
+    <img src="./assets/images/filter/puppy-1-thumbnail.jpg" />
+  </div>
+  <div class="filterDiv puppies">
+    <img src="./assets/images/filter/puppy-2-thumbnail.jpg" />
+  </div>
+  <div class="filterDiv puppies">
+    <img src="./assets/images/filter/puppy-3-thumbnail.jpg" />
+  </div>
+  <div class="filterDiv other">
+    <img src="./assets/images/filter/other-1-thumbnail.jpg" />
+  </div>
+  <div class="filterDiv other">
+    <img src="./assets/images/filter/other-2-thumbnail.jpg" />
+  </div>
+</div>
+
+<script>
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  // Show filtered elements
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
+    }
+  }
+
+  // Hide elements that are not selected
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  // Add active class to the current control button (highlight it)
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+</body>
+</html>
