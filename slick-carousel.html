@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Now Amazing Webpage</title>
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/slick-theme.css" />
+  <style>
+    body {
+      background: grey;
+    }
+
+    .your-class {
+      width: 80%;
+      margin: auto;
+    }
+
+    .your-class img {
+      width: 100% height: auto;
+      display: block;
+    }
+
+    .slick-dots li button::before {
+      font-size: 21px;
+      padding-top: 10px;
+
+    }
+
+    /* the slides */
+    .slick-slide {
+      margin: 0 10px;
+    }
+
+    /* the parent */
+    .slick-list {
+      margin: 0 -20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="#my-carousel" class="your-class">
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+    <div>
+      <img src="https://placehold.it/300x300" />
+    </div>
+
+
+  </div>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./assets/javascripts/slick.min.js"></script>
+  <script type="text/javascript" src="./assets/javascripts/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.your-class').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>
